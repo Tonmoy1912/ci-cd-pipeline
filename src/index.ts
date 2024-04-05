@@ -20,6 +20,15 @@ app.get("/",function(req,res){
     }
 });
 
+app.get("/subham",function(req,res){
+    try{
+        return res.status(200).json({ok:true,message:"This api is created by Subham"});
+    }
+    catch(err:any){
+        return res.status(500).json({ok:true,message:err.message});
+    }
+});
+
 app.use(function(err:any,req:Request,res:Response,next:any){
     return res.status(500).json({ok:true,message:err.message});
 });
